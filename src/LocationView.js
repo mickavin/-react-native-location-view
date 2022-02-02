@@ -114,19 +114,18 @@ export default class LocationView extends React.Component {
     });
   };
 
-  _getCurrentLocation = () => {
-    const { timeout, maximumAge, enableHighAccuracy } = this.props;
+   _getCurrentLocation = () => {
+    let options = {
+    timeout: 2000,
+
+    }
     Geolocation.getCurrentPosition(
-      position => {
-        const { latitude, longitude } = position.coords;
-        this._setRegion({latitude, longitude});
-      },
-      error => console.log(error.message),
-      {
-        enableHighAccuracy,
-        timeout,
-        maximumAge,
-      }
+    position => {
+    const { latitude, longitude } = position.coords;
+    this._setRegion({latitude, longitude});
+    },
+    error => console.log(error.message),
+    options
     );
   };
 
