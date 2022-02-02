@@ -127,7 +127,7 @@ export default class AutoCompleteInput extends React.Component {
             value={this.state.loading ? 'Chargement...' : this.state.text}
             style={styles.textInput}
             underlineColorAndroid={'transparent'}
-            placeholder={'Search'}
+            placeholder={'Rechercher'}
             onFocus={this._onFocus}
             onBlur={this._onBlur}
             onChangeText={this._onChangeText}
